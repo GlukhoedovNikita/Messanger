@@ -1,0 +1,18 @@
+{
+	"extends": [
+		"stylelint-config-standard-scss",
+		"stylelint-config-clean-order"
+	],
+	"plugins": [
+		"stylelint-scss",
+		"stylelint-order"
+	],
+	"rules": {
+		"at-rule-no-unknown": null,
+        "selector-class-pattern": ".[a-z1-9A-Z]",
+        "scss/at-rule-no-unknown": true,
+        "indentation": "tab",
+        "color-hex-case": "lower",
+        "no-empty-first-line": true
+	}
+}

@@ -1,0 +1,41 @@
+@import "@styles/variables";
+
+.container {
+	cursor: pointer;
+
+	display: grid;
+	align-items: center;
+	justify-items: center;
+
+	transition: $transition;
+}
+
+.blue {
+	color: $color-white;
+
+	background-color: $color-blue;
+	border-radius: 8px;
+
+	&:hover {
+		background-color: $color-blue-dark;
+	}
+}
+
+.transparent {
+	color: $color-blue;
+
+	border-bottom: 1px solid transparent;
+
+	&:hover {
+		border-bottom: 1px solid $color-blue;
+	}
+}
+
+.big {
+	width: 100%;
+	padding: 13px 0;
+}
+
+.medium {
+	padding: 13px 50px;
+}
