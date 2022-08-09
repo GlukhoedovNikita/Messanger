@@ -10,6 +10,7 @@ const Input: FC<InputProps> = ({
     color,
     type = 'text',
     placeholder = '',
+    disabled = false,
     ...props
 }) => {
     return (
@@ -17,9 +18,11 @@ const Input: FC<InputProps> = ({
             className={cn(className, styles.container, {
                 [styles.dark]: color === 'dark',
                 [styles.light]: color === 'light',
+                [styles.transparent]: color === 'transparent',
             })}
             placeholder={placeholder}
             type={type}
+            disabled={disabled}
             {...props}
         />
     )

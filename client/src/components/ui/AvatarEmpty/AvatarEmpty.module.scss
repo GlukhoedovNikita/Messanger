@@ -5,8 +5,14 @@
 	align-content: center;
 	justify-content: center;
 
-	background-color: $color-blue-grey;
 	border-radius: 100%;
+}
+
+.dark {
+	background-color: $color-blue-grey-dark;
+}
+.light {
+	background-color: $color-blue-grey;
 }
 
 .big {

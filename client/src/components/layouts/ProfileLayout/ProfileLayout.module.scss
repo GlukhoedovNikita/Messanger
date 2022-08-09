@@ -1,0 +1,17 @@
+@import '@styles/variables';
+
+.container {
+    display: grid;
+    grid-template-areas: 'header'
+        'body';
+    grid-template-rows: auto 1fr;
+    background-color: $color-blue-grey;
+    height: 100vh;
+    padding: 0 15%;
+    .body {
+        grid-area: body;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    }
+}

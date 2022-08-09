@@ -17,6 +17,7 @@ const Button: FC<ButtonProps> = ({
             className={cn(className, styles.container, {
                 [styles.blue]: color === 'blue',
                 [styles.transparent]: color === 'transparent',
+                [styles.red]: color === 'red',
                 [styles.big]: size === 'big',
                 [styles.medium]: size === 'medium',
                 [styles.small]: size === 'small',

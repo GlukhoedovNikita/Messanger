@@ -1,12 +1,12 @@
 import { FC } from 'react'
 
 import MainLayout from '@components/layouts/MainLayout/MainLayout'
-import MainList from '@components/containers/Main/MainList/MainList'
+import MainContainer from '@components/containers/Main/MainContainer/MainContainer'
 
 const MainPage: FC = () => {
     return (
         <MainLayout>
-            <MainList />
+            <MainContainer />
         </MainLayout>
     )
 }

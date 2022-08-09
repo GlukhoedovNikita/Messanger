@@ -11,6 +11,7 @@ const AvatarEmpty: FC<AvatarEmptyProps> = ({
     className,
     image = false,
     size,
+    color = 'light',
     ...props
 }) => {
     return (
@@ -18,6 +19,8 @@ const AvatarEmpty: FC<AvatarEmptyProps> = ({
             className={cn(styles.container, className, {
                 [styles.big]: size === 'big',
                 [styles.medium]: size === 'medium',
+                [styles.dark]: color === 'dark',
+                [styles.light]: color === 'light',
             })}
             {...props}
         >

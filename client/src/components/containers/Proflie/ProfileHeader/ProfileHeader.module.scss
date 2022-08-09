@@ -1,0 +1,13 @@
+@import '@styles/variables';
+
+.container {
+    grid-area: header;
+    display: grid;  
+    grid-template-columns: repeat(3, auto);
+    justify-content: space-between;
+    padding: 15px 30px;
+    margin: 30px 0;
+    border-radius: 20px;
+
+    background-color: $color-blue-grey-dark;
+}
