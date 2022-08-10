@@ -6,11 +6,9 @@ import { InputProps } from './Input.interfaces'
 import styles from './Input.module.scss'
 
 const Input: FC<InputProps> = ({
+    error,
     className,
     color,
-    type = 'text',
-    placeholder = '',
-    disabled = false,
     ...props
 }) => {
     return (
@@ -19,10 +17,8 @@ const Input: FC<InputProps> = ({
                 [styles.dark]: color === 'dark',
                 [styles.light]: color === 'light',
                 [styles.transparent]: color === 'transparent',
+                [styles.error]: error,
             })}
-            placeholder={placeholder}
-            type={type}
-            disabled={disabled}
             {...props}
         />
     )

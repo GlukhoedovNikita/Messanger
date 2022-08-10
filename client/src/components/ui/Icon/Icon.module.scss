@@ -1,37 +1,39 @@
-@import '@styles/variables';
+@import "@styles/variables";
 
 .container {
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    transition: $transition;
-    cursor: pointer;
-}
+	cursor: pointer;
 
-.hoverBlue {
-    &:hover {
-        .image {
-            filter: invert(49%) sepia(99%) saturate(2220%) hue-rotate(184deg) brightness(97%) contrast(96%);
-        }
-    }
-}
+	display: grid;
+	align-content: center;
+	justify-content: center;
 
-.hoverScale {
-    &:hover {
-        transform: scale(1.2);
-    }
+	transition: $transition;
 }
 
 .big {
-    .image {
-        width: 30px;
-        height: 30px;
-    }
+	.image {
+		width: 30px;
+		height: 30px;
+	}
 }
 
 .medium {
-    .image {
-        width: 20px;
-        height: 20px;
-    }
+	.image {
+		width: 20px;
+		height: 20px;
+	}
+}
+
+.hoverBlue {
+	&:hover {
+		.image {
+			filter: invert(49%) sepia(99%) saturate(2220%) hue-rotate(184deg) brightness(97%) contrast(96%);
+		}
+	}
+}
+
+.hoverScale {
+	&:hover {
+		transform: scale(1.2);
+	}
 }

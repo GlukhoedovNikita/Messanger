@@ -1,6 +1,6 @@
-import { DetailedHTMLProps, HTMLAttributes } from 'react'
+import { ButtonHTMLAttributes, DetailedHTMLProps } from 'react'
 
-export interface ButtonProps extends DetailedHTMLProps<HTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+export interface ButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
     className?: string,
     text: string,
     color: 'blue' | 'transparent' | 'red',

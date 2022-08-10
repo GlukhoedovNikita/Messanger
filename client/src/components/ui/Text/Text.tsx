@@ -17,6 +17,7 @@ const Text: FC<TextProps> = ({
             className={cn(className, styles.container, {
                 [styles.white]: color === 'white',
                 [styles.grey]: color === 'grey',
+                [styles.red]: color === 'red',
                 [styles.h1]: size === 'h1',
                 [styles.h2]: size === 'h2',
                 [styles.h3]: size === 'h3',

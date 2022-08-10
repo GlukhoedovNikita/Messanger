@@ -61,7 +61,10 @@ class AuthService {
 
             const tokens = tokenService.create(userDB.id, userDB.email, userDB.login)
             await tokenService.updateRefreshToken(tokens.refreshToken)
-            return tokens
+            return {
+                user: userDB,
+                ...tokens
+            }
         } catch (e) {
             throw e
         }

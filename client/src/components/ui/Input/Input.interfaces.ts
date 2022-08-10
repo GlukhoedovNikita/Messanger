@@ -1,9 +1,7 @@
-import { DetailedHTMLProps, HTMLAttributes } from 'react'
+import { DetailedHTMLProps, InputHTMLAttributes } from 'react'
 
-export interface InputProps extends DetailedHTMLProps<HTMLAttributes<HTMLInputElement>, HTMLInputElement> {
+export interface InputProps extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
     className?: string,
-    placeholder?: string,
     color: 'dark' | 'light' | 'transparent',
-    type?: 'password' | 'text' | 'email' | 'tel',
-    disabled?: boolean,
+    error?: boolean,
 }

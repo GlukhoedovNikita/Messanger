@@ -32,6 +32,21 @@
 		.blockText {
 			display: grid;
 			gap: 8px 0;
+
+			.input {
+				width: 100%;
+				padding: 10px;
+
+				color: $color-white;
+
+				background-color: $color-blue-grey-dark;
+				border: 1px solid transparent;
+				border-radius: 5px;
+			}
+
+			.error {
+				border: 1px solid $color-red;
+			}
 		}
 	}
 }

@@ -1,12 +1,14 @@
-@import '@styles/variables';
+@import "@styles/variables";
 
 .container {
-    grid-area: write;
-    display: grid;
-    padding: 10px 20px;
-    grid-template-columns: auto 1fr auto;
-    gap: 0 30px;
-    margin: 30px 15%;
-    background-color: $color-blue-grey-dark;
-    border-radius: 20px;
+	display: grid;
+	grid-area: write;
+	grid-template-columns: auto 1fr auto;
+	gap: 0 30px;
+
+	margin: 30px 15%;
+	padding: 10px 20px;
+
+	background-color: $color-blue-grey-dark;
+	border-radius: 20px;
 }

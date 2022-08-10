@@ -13,7 +13,7 @@ class AuthController {
             })
             res.json(user)
         } catch (e) {
-            res.status(401).json({ message: `Login Error - ${e}` })
+            res.status(401).json(`Login Error - ${e}`)
         }
     }
 
@@ -26,7 +26,7 @@ class AuthController {
             })
             res.json(user)
         } catch (e) {
-            res.status(401).json({ message: `Login Error - ${e}` })
+            res.status(401).json(`Registration Error - ${e}`)
         }
     }
 
@@ -40,7 +40,7 @@ class AuthController {
             })
             res.json(tokens)
         } catch (e) {
-            res.status(401).json({ message: `Login Error - ${e}` })
+            res.status(401).json(`Refresh Error - ${e}`)
         }
     }
 
@@ -51,7 +51,7 @@ class AuthController {
             res.clearCookie('refreshToken')
             res.json('success')
         } catch (e) {
-            res.status(401).json({ message: `Login Error - ${e}` })
+            res.status(401).json(`Logout Error - ${e}`)
         }
     }
 }

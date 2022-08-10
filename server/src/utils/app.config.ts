@@ -13,7 +13,8 @@ const appConfig = (app: Application) => {
         app.use(cookieParser())
         app.use(cors({
             credentials: true,
-            origin: clientUrl
+            origin: clientUrl,
+            optionsSuccessStatus: 200,
         }))
     } catch (e) {
         throw e

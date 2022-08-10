@@ -1,18 +1,20 @@
-@import '@styles/variables';
+@import "@styles/variables";
 
 .container {
-    grid-area: contact;
-    display: grid;
-    grid-template-columns: repeat(2 ,auto);
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 30px;
-    background-color: $color-blue-grey-dark;
+	display: grid;
+	grid-area: contact;
+	grid-template-columns: repeat(2, auto);
+	align-items: center;
+	justify-content: space-between;
 
-    .blockContact {
-        display: grid;
-        grid-template-columns: repeat(2, auto);
-        align-items: center;
-        gap: 0 10px;
-    }
+	padding: 10px 30px;
+
+	background-color: $color-blue-grey-dark;
+
+	.blockContact {
+		display: grid;
+		grid-template-columns: repeat(2, auto);
+		gap: 0 10px;
+		align-items: center;
+	}
 }

@@ -1,36 +1,40 @@
-@import '@styles/variables';
+@import "@styles/variables";
 
 .container {
-    display: grid;
-    gap: 50px 0;
+	display: grid;
+	gap: 50px 0;
 
-    .blockImage {
-        display: grid;
-        justify-items: center;
-        gap: 20px 0;
-    }
+	.blockImage {
+		display: grid;
+		gap: 20px 0;
+		justify-items: center;
+	}
 
-    .blockInput {
-        display: grid;
-        gap: 10px 0;
-        width: 30vw;
+	.blockInput {
+		display: grid;
+		gap: 10px 0;
 
-        .blockText {
-            padding: 3px 0;
-            display: grid;
-            grid-template-columns: repeat(2, auto);
-            align-items: center;
-            justify-content: space-between;
+		width: 30vw;
 
-            &:not(:last-child) {
-                border-bottom: 1px solid $color-grey;
-            }
-        }
-    }
-    .blockButton {
-        display: grid;
-        justify-items: flex-start;
-        gap: 10px 0;
-        padding: 3px 0;
-    }
+		.blockText {
+			display: grid;
+			grid-template-columns: repeat(2, auto);
+			align-items: center;
+			justify-content: space-between;
+
+			padding: 3px 0;
+
+			&:not(:last-child) {
+				border-bottom: 1px solid $color-grey;
+			}
+		}
+	}
+
+	.blockButton {
+		display: grid;
+		gap: 10px 0;
+		justify-items: flex-start;
+
+		padding: 3px 0;
+	}
 }
