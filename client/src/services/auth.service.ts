@@ -2,10 +2,12 @@ import axios from 'axios'
 
 import {
     IAuthResponse,
+    IUser,
     IUserLogin,
     IUserRegistration
 } from '@store/slices/auth/auth.interfaces'
 import { SERVER_URL } from '@constants/index'
+import { IUserUpdate } from '@store/slices/profile/profile.interfaces'
 
 const api = axios.create({
     baseURL: `${SERVER_URL}/auth`,
@@ -47,6 +49,15 @@ class AuthService {
         try {
             await api.get('/logout')
             localStorage.removeItem('accessToken')
+        } catch (e) {
+            throw e
+        }
+    }
+
+    async updateUser(user: IUserUpdate) {
+        try {
+            const response = await api.post<IUser>('/update', user)
+            return response.data
         } catch (e) {
             throw e
         }

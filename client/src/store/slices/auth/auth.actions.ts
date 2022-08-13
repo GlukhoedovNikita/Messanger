@@ -3,6 +3,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import authService from '@services/auth.service'
 import { AxiosError } from 'axios'
+import { IUserUpdate } from '../profile/profile.interfaces'
 import { IUserLogin, IUserRegistration } from './auth.interfaces'
 
 export const authLogin = createAsyncThunk(
@@ -46,6 +47,18 @@ export const authLogout = createAsyncThunk(
     async (_, { rejectWithValue }) => {
         try {
             await authService.logout()
+        } catch (e) {
+            return rejectWithValue((e as AxiosError).response?.data)
+        }
+    }
+)
+
+export const authUpdateUser = createAsyncThunk(
+    'updateUser',
+    async (user: IUserUpdate, { rejectWithValue }) => {
+        try {
+            const userUpdated = authService.updateUser(user)
+            return userUpdated
         } catch (e) {
             return rejectWithValue((e as AxiosError).response?.data)
         }

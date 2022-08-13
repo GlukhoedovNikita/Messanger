@@ -57,6 +57,26 @@ class AuthQuery {
             throw e
         }
     }
+
+    async update(user: IUserRegistartion) {
+        try {
+            const {
+                email,
+                login,
+                name,
+                lastname,
+                phone,
+            } = user
+            console.log(user)
+            const userUpdated = await pool.query<IUser>('UPDATE auth SET email = $1, login = $2, \n\
+                name = $3, lastname = $4, phone = $5 RETURNING email, name, login, lastname, phone, id', [
+                email, login, name, lastname, phone
+            ])
+            return userUpdated.rows[0]
+        } catch (e) {
+            throw e
+        }
+    }
 }
 
 export default new AuthQuery()

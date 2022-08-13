@@ -28,7 +28,7 @@ const SingUpContainer: FC = () => {
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(schema)
     })
-    const redirectNextHandler = useRedirect('result')
+    const redirectNextHandler = useRedirect('/singup/result')
     const redirectSingInHandler = useRedirect('/')
 
     const onSubmit = (data: FieldValues) => {

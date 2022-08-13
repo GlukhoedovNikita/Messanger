@@ -52,19 +52,38 @@ class AuthService {
         }
     }
 
-    async refresh(refreshToken: string) {
+    async check(refreshToken: string) {
         try {
             createError(!refreshToken, 'no refreshToken')
             const jwtPayload = tokenService.validateRefreshToken(refreshToken)
             const userDB = await authQuery.getWithId((jwtPayload as IJwtPayload).id)
             createError(!jwtPayload || !userDB, 'invalid refresh token or user does not exist')
+            return userDB
+        } catch (e) {
+            throw e
+        }
+    }
 
-            const tokens = tokenService.create(userDB.id, userDB.email, userDB.login)
+    async refresh(refreshToken: string) {
+        try {
+            const user = await this.check(refreshToken)
+
+            const tokens = tokenService.create(user.id, user.email, user.login)
             await tokenService.updateRefreshToken(tokens.refreshToken)
             return {
-                user: userDB,
+                user,
                 ...tokens
             }
+        } catch (e) {
+            throw e
+        }
+    }
+
+    async updateUser(user: IUserRegistartion, refreshToken: string) {
+        try {
+            await this.check(refreshToken)
+            const updatedUser = await authQuery.update(user)
+            return updatedUser
         } catch (e) {
             throw e
         }

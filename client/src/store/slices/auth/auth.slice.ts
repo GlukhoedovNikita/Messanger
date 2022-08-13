@@ -3,7 +3,8 @@ import {
     authLogin,
     authLogout,
     authRefresh,
-    authRegistration
+    authRegistration,
+    authUpdateUser
 } from './auth.actions'
 
 import { IAuthState, IUser, IUserTemplateRegistration } from './auth.interfaces'
@@ -87,6 +88,17 @@ const authSlice = createSlice({
         },
         [authLogout.rejected.type]: (state, action: PayloadAction<string>) => {
             state.loading = false
+            state.error = action.payload
+        },
+
+        [authUpdateUser.pending.type]: (state) => {
+            state.error = null
+        },
+        [authUpdateUser.fulfilled.type]: (state, action: PayloadAction<IUser>) => {
+            state.error = null
+            state.user = action.payload
+        },
+        [authUpdateUser.rejected.type]: (state, action: PayloadAction<string>) => {
             state.error = action.payload
         },
     }

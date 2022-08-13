@@ -54,6 +54,16 @@ class AuthController {
             res.status(401).json(`Logout Error - ${e}`)
         }
     }
+
+    async updateUser(req: Request, res: Response) {
+        try {
+            const { refreshToken } = req.cookies
+            const userUpdated = await authService.updateUser(req.body, refreshToken)
+            res.json(userUpdated)
+        } catch (e) {
+            res.status(401).json(`Update user Error - ${e}`)
+        }
+    }
 }
 
 export default new AuthController()

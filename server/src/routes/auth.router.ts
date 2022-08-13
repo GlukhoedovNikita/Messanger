@@ -8,5 +8,6 @@ authRouter.post('/login', authController.login)
 authRouter.post('/registration', authController.registartion)
 authRouter.get('/logout', authController.logout)
 authRouter.get('/refresh', authController.refresh)
+authRouter.post('/update', authController.updateUser)
 
 export default authRouter
