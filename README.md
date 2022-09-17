@@ -14,7 +14,7 @@ Socket.io
 **Back end**
 ~~~~
 NodeJS
-PosgreDB
+PostgreDB
 Socket.io
 JWT
 ~~~~
